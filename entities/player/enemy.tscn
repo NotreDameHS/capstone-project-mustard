@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://djo77pba57rxc"]
+
+[ext_resource type="Script" uid="uid://ds0cbl6rgjl18" path="res://entities/player/enemy.gd" id="1_inxon"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_inxon"]
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1050630765]
+script = ExtResource("1_inxon")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=30171219]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=285734142]
+shape = SubResource("CircleShape2D_inxon")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=319728427]
+offset_right = 4.0
+offset_bottom = 27.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2034265019]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=733128462]
