@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c5jautaki2dmh"]
+
+[ext_resource type="PackedScene" uid="uid://bxxno2br2peai" path="res://entities/enemy/base_enemy.tscn" id="1_6d515"]
+[ext_resource type="Texture2D" uid="uid://dvomxkwmlr2gj" path="res://world/kenney_tiny-dungeon/Tiles/tile_0120.png" id="2_4lwkr"]
+
+[node name="RunnerZombie" unique_id=1560193310 instance=ExtResource("1_6d515")]
+speed = 160.0
+brain_drop_amount = 3
+
+[node name="Sprite2D" parent="." index="0" unique_id=1683188954]
+texture = ExtResource("2_4lwkr")

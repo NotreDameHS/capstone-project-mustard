@@ -14,6 +14,12 @@ config/name="ZOMBAGEDDON"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[file_customization]
+
+folder_colors={
+"res://entities/enemy/": "pink"
+}
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

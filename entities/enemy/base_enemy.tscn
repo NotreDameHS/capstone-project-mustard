@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bxxno2br2peai"]
+
+[ext_resource type="Script" uid="uid://ddrfuu0blny68" path="res://entities/enemy/base_enemy.gd" id="1_gtfva"]
+[ext_resource type="Texture2D" uid="uid://cvvxcprioabfx" path="res://world/kenney_tiny-dungeon/Tiles/tile_0108.png" id="2_tdrw6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gtfva"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdrw6"]
+bg_color = Color(0, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_815kx"]
+
+[node name="BaseEnemy" type="CharacterBody2D" unique_id=1560193310 groups=["player"]]
+script = ExtResource("1_gtfva")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1683188954]
+texture = ExtResource("2_tdrw6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1902632034]
+shape = SubResource("CircleShape2D_gtfva")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=404997076]
+offset_left = -40.0
+offset_top = -21.0
+offset_right = 40.0
+offset_bottom = -13.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_tdrw6")
+value = 100.0
+show_percentage = false
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=1136362146]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=857601097]
+shape = SubResource("CircleShape2D_815kx")

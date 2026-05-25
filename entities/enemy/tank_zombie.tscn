@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dsq71v755gn2x"]
+
+[ext_resource type="PackedScene" uid="uid://bxxno2br2peai" path="res://entities/enemy/base_enemy.tscn" id="1_acjdw"]
+[ext_resource type="Texture2D" uid="uid://biduh4o4wrspi" path="res://world/kenney_tiny-dungeon/Tiles/tile_0109.png" id="2_23d6u"]
+
+[node name="TankZombie" unique_id=1560193310 instance=ExtResource("1_acjdw")]
+speed = 200.0
+brain_drop_amount = 5
+
+[node name="Sprite2D" parent="." index="0" unique_id=1683188954]
+texture = ExtResource("2_23d6u")

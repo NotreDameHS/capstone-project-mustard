@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://efrqvqnejejr"]
+
+[ext_resource type="Script" uid="uid://cwxqdhkfybll2" path="res://entities/player/player.gd" id="1_symyc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_abrql"]
+
+[node name="Player" type="CharacterBody2D" unique_id=1672458893]
+script = ExtResource("1_symyc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=575815790]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=36360991]
+shape = SubResource("CircleShape2D_abrql")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=923053166]
+
+[node name="WeaponHolder" type="Node2D" parent="." unique_id=2023395445]

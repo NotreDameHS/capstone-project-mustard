@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cgtq15h4sehmr"]
+
+[ext_resource type="PackedScene" uid="uid://bxxno2br2peai" path="res://entities/enemy/base_enemy.tscn" id="1_nlsvd"]
+
+[node name="WalkerZombie" unique_id=1560193310 instance=ExtResource("1_nlsvd")]
