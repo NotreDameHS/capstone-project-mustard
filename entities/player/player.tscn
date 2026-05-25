@@ -4,7 +4,16 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_abrql"]
 
-[node name="Player" type="CharacterBody2D" unique_id=1672458893]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_symyc"]
+bg_color = Color(0, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sglur"]
+
+[node name="Player" type="CharacterBody2D" unique_id=1672458893 groups=["Player"]]
 script = ExtResource("1_symyc")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=575815790]
@@ -15,3 +24,17 @@ shape = SubResource("CircleShape2D_abrql")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=923053166]
 
 [node name="WeaponHolder" type="Node2D" parent="." unique_id=2023395445]
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=1151345279]
+offset_left = -28.0
+offset_top = -19.0
+offset_right = 29.0
+offset_bottom = -14.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_symyc")
+value = 100.0
+show_percentage = false
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=1145988020]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1939061555]
+shape = SubResource("CircleShape2D_sglur")

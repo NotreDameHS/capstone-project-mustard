@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://xhxu5jbubmny"]
+
+[ext_resource type="Script" uid="uid://cg75iqy5xkkb2" path="res://entities/collectibles/brain_sample.gd" id="1_hlh3v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eot8a"]
+
+[node name="BrainSample" type="Area2D" unique_id=2069945248]
+script = ExtResource("1_hlh3v")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1227915539]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1859812324]
+shape = SubResource("CircleShape2D_eot8a")
+
+[node name="Timer" type="Timer" parent="." unique_id=892069293]
+wait_time = 10.0
+one_shot = true
+autostart = true

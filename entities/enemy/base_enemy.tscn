@@ -14,7 +14,7 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_815kx"]
 
-[node name="BaseEnemy" type="CharacterBody2D" unique_id=1560193310 groups=["player"]]
+[node name="BaseEnemy" type="CharacterBody2D" unique_id=1560193310]
 script = ExtResource("1_gtfva")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1683188954]
