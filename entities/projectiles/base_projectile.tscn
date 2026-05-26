@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://lmn88uhg5uf8"]
+
+[ext_resource type="Script" uid="uid://ctur2d7t3svfg" path="res://entities/projectiles/base_projectile.gd" id="1_6j5nk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ti2np"]
+
+[node name="BaseProjectile" type="Area2D" unique_id=1376323142]
+script = ExtResource("1_6j5nk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1612321911]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2098837038]
+shape = SubResource("CircleShape2D_ti2np")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1364480116]

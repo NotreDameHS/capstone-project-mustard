@@ -20,7 +20,8 @@ folder_colors={
 "res://entities/": "purple",
 "res://entities/collectibles/": "pink",
 "res://entities/enemy/": "pink",
-"res://entities/player/": "pink"
+"res://entities/player/": "pink",
+"res://entities/projectiles/": "pink"
 }
 
 [input]

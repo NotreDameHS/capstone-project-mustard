@@ -12,7 +12,9 @@ script = ExtResource("1_hlh3v")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1859812324]
 shape = SubResource("CircleShape2D_eot8a")
 
-[node name="Timer" type="Timer" parent="." unique_id=892069293]
+[node name="DespawnTimer" type="Timer" parent="." unique_id=892069293]
 wait_time = 10.0
 one_shot = true
 autostart = true
+
+[connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]
