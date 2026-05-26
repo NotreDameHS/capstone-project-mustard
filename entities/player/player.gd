@@ -3,8 +3,11 @@
 class_name Player extends CharacterBody2D
 
 # Having it as an export will help me have an easier time tweaking this later on – specially becasue i plan on having a speed upgrade
-@export var max_speed: float = 300.0
+@export var max_speed: float = 5.0
 
+
+func _ready() -> void:
+	print("READY")
 
 func _physics_process(delta: float) -> void:
 	# This specifically stores movement direction. Will start at zero untill player presses a move key
@@ -30,7 +33,12 @@ func _physics_process(delta: float) -> void:
 	
 	velocity = direction * max_speed
 	
+	
+	# MOVING PLAYER
+	position.x += velocity.x
+	position.y += velocity.y
+	
 	# Applying movement 
-	move_and_slide()
+	#move_and_slide()
 	
 	

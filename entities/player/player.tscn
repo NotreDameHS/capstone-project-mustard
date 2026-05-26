@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://efrqvqnejejr"]
 
 [ext_resource type="Script" uid="uid://cwxqdhkfybll2" path="res://entities/player/player.gd" id="1_symyc"]
+[ext_resource type="Texture2D" uid="uid://o1mx63uv880n" path="res://entities/player/tile_0084.png" id="2_abrql"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_abrql"]
 
@@ -17,11 +18,17 @@ corner_radius_bottom_left = 4
 script = ExtResource("1_symyc")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=575815790]
+position = Vector2(0, 7)
+scale = Vector2(1.9375, 2)
+texture = ExtResource("2_abrql")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=36360991]
+visible = false
 shape = SubResource("CircleShape2D_abrql")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=923053166]
+zoom = Vector2(2, 2)
 
 [node name="WeaponHolder" type="Node2D" parent="." unique_id=2023395445]
 
@@ -35,6 +42,7 @@ value = 100.0
 show_percentage = false
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=1145988020]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1939061555]
 shape = SubResource("CircleShape2D_sglur")

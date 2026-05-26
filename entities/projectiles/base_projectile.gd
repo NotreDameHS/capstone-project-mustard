@@ -1,5 +1,5 @@
 # Base projectile scene for all the gun bullets
-# Will be inherited later for my bullet and guns
+# Will be inherited later for my bullets for my guns
 
 class_name BaseProjectile extends Area2D
 
