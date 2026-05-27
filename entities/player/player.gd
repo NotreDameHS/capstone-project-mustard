@@ -38,6 +38,11 @@ func _physics_process(delta: float) -> void:
 	position.x += velocity.x
 	position.y += velocity.y
 	
+	if velocity.x > 0:
+		$Sprite2D.flip_h = false
+	elif velocity.x < 0:
+		$Sprite2D.flip_h = true
+	
 	# Applying movement 
 	#move_and_slide()
 	

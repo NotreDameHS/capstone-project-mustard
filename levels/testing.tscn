@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://efrqvqnejejr" path="res://entities/player/player.tscn" id="1_op810"]
 [ext_resource type="Texture2D" uid="uid://djc4leho32m6h" path="res://icon.svg" id="2_dyxfn"]
+[ext_resource type="PackedScene" uid="uid://bxxno2br2peai" path="res://entities/enemy/base_enemy.tscn" id="3_nqmqf"]
 
 [node name="Node2D" type="Node2D" unique_id=1515320254]
 
@@ -15,3 +16,6 @@ zoom = Vector2(2, 2)
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1409426057]
 position = Vector2(152, 144)
 texture = ExtResource("2_dyxfn")
+
+[node name="BaseEnemy" parent="." unique_id=1560193310 instance=ExtResource("3_nqmqf")]
+position = Vector2(69, 48)

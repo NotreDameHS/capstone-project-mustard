@@ -48,8 +48,13 @@ func _physics_process(delta: float) -> void:
 	# Trying to get the zombies to smoothly chase the player
 	velocity = direction * speed
 	
+	if velocity.x > 0:
+		$Sprite2D.flip_h = false
+	elif velocity.x < 0:
+		$Sprite2D.flip_h = true
+	
 	# Applying movement to the enemy
-	move_and_slide()
+	# move_and_slide()
 
 func take_damage(amount: float) -> void:
 	# Reducing enemies health by the incoming damage amount
