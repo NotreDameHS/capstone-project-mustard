@@ -17,11 +17,15 @@ config/icon="res://icon.svg"
 [file_customization]
 
 folder_colors={
+"res://assets/": "blue",
 "res://entities/": "purple",
 "res://entities/collectibles/": "pink",
 "res://entities/enemy/": "pink",
 "res://entities/player/": "pink",
-"res://entities/projectiles/": "pink"
+"res://entities/projectiles/": "pink",
+"res://levels/": "yellow",
+"res://ui/": "blue",
+"res://world/": "teal"
 }
 
 [input]

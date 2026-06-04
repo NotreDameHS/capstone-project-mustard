@@ -1,9 +1,16 @@
 [gd_scene format=3 uid="uid://bwbsqxbbecsga"]
 
 [ext_resource type="Script" uid="uid://cgib71dfw4u0f" path="res://entities/projectiles/weapon.gd" id="1_5omfs"]
+[ext_resource type="Texture2D" uid="uid://b2e05imxtkd3q" path="res://entities/projectiles/pistol.png" id="2_e8ab6"]
 
 [node name="Weapon" type="Node2D" unique_id=2043803413]
 script = ExtResource("1_5omfs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=677849721]
+texture_filter = 1
+position = Vector2(9.536743e-07, 9.536743e-07)
+scale = Vector2(0.08432539, 0.088999994)
+texture = ExtResource("2_e8ab6")
 
 [node name="Firepoint" type="Marker2D" parent="." unique_id=1126296710]
 

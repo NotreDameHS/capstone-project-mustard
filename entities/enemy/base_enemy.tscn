@@ -19,6 +19,7 @@ corner_radius_bottom_left = 4
 script = ExtResource("1_gtfva")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1683188954]
+texture_filter = 1
 scale = Vector2(2, 1.9375)
 texture = ExtResource("2_tdrw6")
 

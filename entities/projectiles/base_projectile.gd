@@ -6,7 +6,6 @@ class_name BaseProjectile extends Area2D
 @export var speed: float = 600.0
 @export var damage: float = 25.0
 
-
 # I'm seperating direction from speed because the direction is for where the projectile moves where the speed is for how fasr the projectile moves
 var direction := Vector2.ZERO
 
@@ -29,10 +28,10 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	
 	# Checking to see if the object hit the enemy because only the zombies should take hit damage 
-	if body is BaseEnemy:
-		
+	if body.is_in_group("Enemy"):
 		# Applying damage to the enemy
-		body.take_damage(damage)
+		if body.has_method("take_damage"):
+			body.take_damage(damage)
 		
 		# Deleting the projectile after it has hit the enemy
 		queue_free()
