@@ -50,10 +50,12 @@ func _physics_process(delta: float) -> void:
 		$Sprite2D.flip_h = false
 	elif velocity.x < 0:
 		$Sprite2D.flip_h = true
-	
-	# Applying movement
-	# move_and_slide()
 
+	# trying to get the weapon to move with the player
+	if velocity.x > 0:
+		$WeaponHolder.scale.x = 1
+	elif velocity.x < 0:
+		$WeaponHolder.scale.x = -1
 
 func take_damage(amount: float) -> void:
 	# Reducing the player's health by the incoming enemy damage amount

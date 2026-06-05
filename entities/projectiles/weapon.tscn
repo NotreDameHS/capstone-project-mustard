@@ -2,14 +2,15 @@
 
 [ext_resource type="Script" uid="uid://cgib71dfw4u0f" path="res://entities/projectiles/weapon.gd" id="1_5omfs"]
 [ext_resource type="Texture2D" uid="uid://b2e05imxtkd3q" path="res://entities/projectiles/pistol.png" id="2_e8ab6"]
+[ext_resource type="PackedScene" uid="uid://cgixp7s7qxeic" path="res://entities/projectiles/bullet.tscn" id="2_m2foq"]
 
 [node name="Weapon" type="Node2D" unique_id=2043803413]
 script = ExtResource("1_5omfs")
+projectile_scene = ExtResource("2_m2foq")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=677849721]
 texture_filter = 1
-position = Vector2(9.536743e-07, 9.536743e-07)
-scale = Vector2(0.08432539, 0.088999994)
+scale = Vector2(0.09613093, 0.10849999)
 texture = ExtResource("2_e8ab6")
 
 [node name="Firepoint" type="Marker2D" parent="." unique_id=1126296710]
@@ -17,3 +18,5 @@ texture = ExtResource("2_e8ab6")
 [node name="CooldownTimer" type="Timer" parent="." unique_id=853607207]
 wait_time = 0.4
 one_shot = true
+
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]

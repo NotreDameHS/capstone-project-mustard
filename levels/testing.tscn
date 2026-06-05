@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://efrqvqnejejr" path="res://entities/player/player.tscn" id="1_op810"]
 [ext_resource type="Texture2D" uid="uid://djc4leho32m6h" path="res://icon.svg" id="2_dyxfn"]
 [ext_resource type="PackedScene" uid="uid://bxxno2br2peai" path="res://entities/enemy/base_enemy.tscn" id="3_nqmqf"]
-[ext_resource type="PackedScene" uid="uid://bwbsqxbbecsga" path="res://entities/projectiles/weapon.tscn" id="4_qyon5"]
 
 [node name="Node2D" type="Node2D" unique_id=1515320254]
 
@@ -15,11 +14,9 @@ position = Vector2(288, 165)
 zoom = Vector2(2, 2)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1409426057]
+texture_filter = 1
 position = Vector2(152, 144)
 texture = ExtResource("2_dyxfn")
 
 [node name="BaseEnemy" parent="." unique_id=1560193310 instance=ExtResource("3_nqmqf")]
 position = Vector2(69, 48)
-
-[node name="Weapon" parent="." unique_id=2043803413 instance=ExtResource("4_qyon5")]
-position = Vector2(305, 180)

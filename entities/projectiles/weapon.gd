@@ -1,5 +1,3 @@
-
-
 class_name Weapon extends Node2D
 
 #stores the bullet scene so the weapon knows were to spawn
@@ -22,15 +20,28 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("attack"):
+		attack()
 
 
 func attack() -> void:
+	if can_attack == false:
+		return
+	
+
 	if projectile_scene == null:
 		print("No projectile selected.")
 		return
+	
+	can_attack = false
 	
 	var projectile = projectile_scene.instantiate()
 	projectile.global_position = fire_point.global_position
 	
 	get_tree().current_scene.add_child(projectile)
+	
+	cooldown_timer.start(attack_cooldown)
+
+
+func _on_cooldown_timer_timeout() -> void:
+	can_attack = true
