@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bxxno2br2peai"]
 
 [ext_resource type="Script" uid="uid://ddrfuu0blny68" path="res://entities/enemy/base_enemy.gd" id="1_gtfva"]
+[ext_resource type="PackedScene" uid="uid://xhxu5jbubmny" path="res://entities/collectibles/brain_sample.tscn" id="2_815kx"]
 [ext_resource type="Texture2D" uid="uid://cvvxcprioabfx" path="res://world/kenney_tiny-dungeon/Tiles/tile_0108.png" id="2_tdrw6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gtfva"]
@@ -15,8 +16,11 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_815kx"]
 
-[node name="BaseEnemy" type="CharacterBody2D" unique_id=1560193310]
+[node name="BaseEnemy" type="CharacterBody2D" unique_id=1560193310 groups=["Enemy"]]
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_gtfva")
+brain_sample_scene = ExtResource("2_815kx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1683188954]
 texture_filter = 1
@@ -35,10 +39,12 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_tdrw6")
 value = 100.0
 show_percentage = false
 
-[node name="HurtBox" type="Area2D" parent="." unique_id=1136362146]
+[node name="AttackRange" type="Area2D" parent="." unique_id=1136362146]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=857601097]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange" unique_id=857601097]
 shape = SubResource("CircleShape2D_815kx")
 
-[connection signal="area_exited" from="HurtBox" to="." method="_on_detection_area_body_exited"]
-[connection signal="area_shape_entered" from="HurtBox" to="." method="_on_detection_area_body_entered"]
+[connection signal="area_exited" from="AttackRange" to="." method="_on_detection_area_body_exited"]
+[connection signal="area_shape_entered" from="AttackRange" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_entered" from="AttackRange" to="." method="_on_attack_range_body_entered"]
+[connection signal="body_exited" from="AttackRange" to="." method="_on_attack_range_body_exited"]

@@ -8,11 +8,17 @@ func _ready() -> void:
 	body_entered.connect(_on_body_entered) # When something comes in contact witj Area2D, run the on body function
 
 func _on_body_entered(body: Node2D) -> void:
-	# Only want the item to be collected if it has come in contact with the player, and the player only not another zombie
-	if body.is_in_group("Player"): # Checking to see if what touched it was the player so that the player can collect yhe brain
-		print("Collected brain samlpe: ", sample_amount) # Printing something in case I need to debug – whivh I probably will need to
-		# Wany it to print collected brain sample: 2, or whatever it is
-		queue_free() # Deleting the brain sample from the scene, because after its collected it should be deleted
+	# Only want the item to be collected if it has come in contact with the player
+	if body.is_in_group("Player"):
+		
+		# Tell the player to add this brain sample to their counter
+		if body.has_method("collect_brain_sample"):
+			body.collect_brain_sample(sample_amount)
+		
+		print("Collected brain sample: ", sample_amount)
+		
+		# Deleting the brain sample from the scene after the player collects it
+		queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -36,8 +36,11 @@ func attack() -> void:
 	can_attack = false
 	
 	var projectile = projectile_scene.instantiate()
+
 	projectile.global_position = fire_point.global_position
-	
+	projectile.direction = owner.facing_direction
+	print(projectile.direction)
+
 	get_tree().current_scene.add_child(projectile)
 	
 	cooldown_timer.start(attack_cooldown)

@@ -5,6 +5,8 @@ extends CharacterBody2D
 
 # Export variables allow me to edit values directly in the Inspector without touching this base code for my inherited scenes >:)
 
+@export var brain_sample_scene: PackedScene
+
 # Controls zombie movement speed
 @export var speed: float = 80.0
 
@@ -47,6 +49,7 @@ func _ready() -> void:
 	# I want the starting health to be the max because it should always start full
 	health = max_health
 	
+	health_bar.min_value = 0
 	# Setting the healthbar's max value because the bar needs to know the full range of values
 	health_bar.max_value = max_health
 	
@@ -81,23 +84,36 @@ func _physics_process(delta: float) -> void:
 
 
 func take_damage(amount: float) -> void:
+# Debug message to prove damage is being received
+	print("take_damage was called on zombie with amount: ", amount)
+	
 	# Reducing enemy's health by the incoming damage amount
 	health -= amount
+	
+	# Making sure health cannot go below 0 or above max health
+	health = clamp(health, 0, max_health)
 	
 	# Update health bar visually so that the healthbar decreases when enemy is hit
 	health_bar.value = health
 	
 	# Debug message so I can confirm the enemy is taking damage
-	print("Zombie took damage. Health is now: ", health)
+	print("Zombie health is now: ", health)
+	print("Zombie health bar value is now: ", health_bar.value)
 	
 	# If health reaches zero or below kill the enemy
 	if health <= 0:
 		die()
 
-
 func die() -> void:
 	# Debug message just to confirm my logic isn't broken
 	print("Zombie died")
+	
+	# Drop brain samples when zombie dies
+	for x in brain_drop_amount:
+		if brain_sample_scene != null:
+			var brain_sample = brain_sample_scene.instantiate()
+			brain_sample.global_position = global_position
+			get_tree().current_scene.add_child(brain_sample)
 	
 	# Removing enemy from the scene
 	queue_free()

@@ -1,34 +1,49 @@
 # Base projectile scene for all the gun bullets
 # Will be inherited later for my bullets for my guns
 
-class_name BaseProjectile extends Area2D
+class_name BaseProjectile
+extends Area2D
 
-@export var speed: float = 600.0
+@export var speed: float = 2000.0
 @export var damage: float = 25.0
 
-# I'm seperating direction from speed because the direction is for where the projectile moves where the speed is for how fasr the projectile moves
+# This controls how long the bullet stays alive before deleting itself
+# Higher number means the bullet travels farther
+@export var lifetime: float = 2.0
+
+# I'm separating direction from speed because the direction is for where the projectile moves
+# where the speed is for how fast the projectile moves
 var direction := Vector2.ZERO
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	
-	# Connecting Area2D collision signal so that the projectile will (hopefully) react when it touches something
 	body_entered.connect(_on_body_entered)
+	$VisibleOnScreenNotifier2D.screen_exited.connect(_on_screen_exited)
 	
-	# Connecting the screen exit signal so that hpefully the projectile will be deleted once it leave sthe screen
-	$VisibleOnScreenNotifier2D.screen_exited.connect(_on_screen_existed)
+	# Deletes bullet after some time so it does not exist forever
+	await get_tree().create_timer(lifetime).timeout
+	queue_free()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
-	# Moving the projectile every frame so that the projectile will move continously in it's direction
-	position += direction * speed * delta
- 
+	pass
+
+# Testing to see if this will fix my bullet issue
+func _physics_process(delta: float) -> void:
+	global_position += direction * speed * delta
+
 func _on_body_entered(body: Node2D) -> void:
-	
-	# Checking to see if the object hit the enemy because only the zombies should take hit damage 
+	print("Bullet hit: ", body.name)
+
+	# If the bullet hits the player, ignore it
+	if body.is_in_group("Player"):
+		return
+
+	# Checking to see if the object hit the enemy because only the zombies should take hit damage
 	if body.is_in_group("Enemy"):
+		
+		print("Bullet hit enemy!")
+		
 		# Applying damage to the enemy
 		if body.has_method("take_damage"):
 			body.take_damage(damage)
@@ -36,7 +51,7 @@ func _on_body_entered(body: Node2D) -> void:
 		# Deleting the projectile after it has hit the enemy
 		queue_free()
 
-func _on_screen_existed() -> void:
-	
-	# Deletes the projectile once it goes off screen so there isn't a build up of invisible projectiles
+
+func _on_screen_exited() -> void:
+	# Deletes the projectile once it goes off screen
 	queue_free()

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://xhxu5jbubmny"]
 
 [ext_resource type="Script" uid="uid://cg75iqy5xkkb2" path="res://entities/collectibles/brain_sample.gd" id="1_hlh3v"]
+[ext_resource type="Texture2D" uid="uid://tol63hc0fovj" path="res://entities/collectibles/stylized-brain-icon-in-pixel-art-style-png.webp" id="2_phoru"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eot8a"]
 
@@ -8,6 +9,8 @@
 script = ExtResource("1_hlh3v")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1227915539]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_phoru")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1859812324]
 shape = SubResource("CircleShape2D_eot8a")
@@ -17,4 +20,5 @@ wait_time = 10.0
 one_shot = true
 autostart = true
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]
