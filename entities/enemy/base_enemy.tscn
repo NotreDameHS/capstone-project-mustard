@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cvvxcprioabfx" path="res://world/kenney_tiny-dungeon/Tiles/tile_0108.png" id="2_tdrw6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gtfva"]
-radius = 19.0
+radius = 39.115215
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdrw6"]
 bg_color = Color(0, 1, 1, 1)
@@ -15,16 +15,16 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_815kx"]
+radius = 35.057095
 
 [node name="BaseEnemy" type="CharacterBody2D" unique_id=1560193310 groups=["Enemy"]]
 collision_layer = 2
-collision_mask = 0
 script = ExtResource("1_gtfva")
 brain_sample_scene = ExtResource("2_815kx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1683188954]
 texture_filter = 1
-scale = Vector2(2, 1.9375)
+scale = Vector2(3.1875, 3.0937498)
 texture = ExtResource("2_tdrw6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1902632034]
@@ -32,9 +32,9 @@ shape = SubResource("CircleShape2D_gtfva")
 
 [node name="HealthBar" type="ProgressBar" parent="." unique_id=404997076]
 offset_left = -26.0
-offset_top = -25.0
+offset_top = -32.0
 offset_right = 27.0
-offset_bottom = -20.0
+offset_bottom = -27.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_tdrw6")
 value = 100.0
 show_percentage = false

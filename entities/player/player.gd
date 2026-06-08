@@ -6,7 +6,7 @@ extends CharacterBody2D
 @onready var health_bar = $HealthBar
 
 # Having it as an export will help me have an easier time tweaking this later on – specially because I plan on having a speed upgrade
-@export var max_speed: float = 5.0
+@export var max_speed: float = 300.0
 
 # Stores the player's maximum health
 @export var max_health: float = 100.0
@@ -54,8 +54,9 @@ func _physics_process(delta: float) -> void:
 	velocity = direction * max_speed
 	
 	# MOVING PLAYER
-	position.x += velocity.x
-	position.y += velocity.y
+	#position.x += velocity.x
+	#position.y += velocity.y
+	move_and_slide()
 	
 	# Flipping sprite depending on which direction the player is moving
 	#if velocity.x > 0:

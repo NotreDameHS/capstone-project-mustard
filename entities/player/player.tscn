@@ -21,8 +21,8 @@ script = ExtResource("1_symyc")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=575815790]
 texture_filter = 1
-position = Vector2(0, 7)
-scale = Vector2(1.9375, 2)
+position = Vector2(1.9073486e-06, 1.9073486e-06)
+scale = Vector2(3.03125, 3.1875)
 texture = ExtResource("2_abrql")
 flip_h = true
 
@@ -37,13 +37,13 @@ zoom = Vector2(2, 2)
 position = Vector2(12, 0)
 
 [node name="Weapon" parent="WeaponHolder" unique_id=2043803413 instance=ExtResource("3_sglur")]
-position = Vector2(16, 10)
+position = Vector2(22, 2)
 
 [node name="HealthBar" type="ProgressBar" parent="." unique_id=1151345279]
 offset_left = -28.0
-offset_top = -19.0
+offset_top = -39.0
 offset_right = 29.0
-offset_bottom = -14.0
+offset_bottom = -34.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_symyc")
 value = 100.0
 show_percentage = false

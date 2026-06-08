@@ -8,4 +8,9 @@ speed = 200.0
 brain_drop_amount = 5
 
 [node name="Sprite2D" parent="." index="0" unique_id=1683188954]
+scale = Vector2(3.0625, 3.15625)
 texture = ExtResource("2_23d6u")
+
+[node name="HealthBar" parent="." index="2" unique_id=404997076]
+offset_top = -43.0
+offset_bottom = -38.0
