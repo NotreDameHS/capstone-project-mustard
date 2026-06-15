@@ -25,7 +25,7 @@ script = ExtResource("1_nttm3")
 zombie_scenes = Array[PackedScene]([ExtResource("2_puf6h"), ExtResource("3_q3yjr"), ExtResource("4_aqt1f")])
 spawn_zones_path = NodePath("SpawnZones")
 
-[node name="SpawnerTimer" type="Timer" parent="." unique_id=1320221921]
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1320221921]
 wait_time = 4.0
 
 [node name="SpawnZones" type="Node2D" parent="." unique_id=1110428842]
