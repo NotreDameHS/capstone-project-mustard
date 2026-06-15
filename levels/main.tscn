@@ -33,9 +33,36 @@ wait_time = 5.0
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=509614805]
 
 [node name="BrainLabel" type="Label" parent="CanvasLayer" unique_id=995737792]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -723.0
+offset_top = -403.0
+offset_right = -623.0
+offset_bottom = -380.0
 text = "Brains: 0 / 50"
+
+[node name="HealthLabel" type="Label" parent="CanvasLayer" unique_id=306791014]
+offset_left = -584.0
+offset_top = -405.0
+offset_right = -462.0
+offset_bottom = -382.0
+text = "Health: 100/100"
+
+[node name="GameOverLabel" type="Label" parent="CanvasLayer" unique_id=513820810]
+visible = false
+offset_left = -117.0
+offset_top = -27.0
+offset_right = 107.0
+offset_bottom = 27.0
+theme_override_font_sizes/font_size = 40
+text = "GAME OVER"
+
+[node name="WinLabel" type="Label" parent="CanvasLayer" unique_id=1573794605]
+visible = false
+offset_left = -106.0
+offset_top = -27.0
+offset_right = 90.0
+offset_bottom = 28.0
+theme_override_font_sizes/font_size = 40
+text = "YOU WON"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=40222033]
 

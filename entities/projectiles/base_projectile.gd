@@ -4,20 +4,21 @@
 class_name BaseProjectile
 extends Area2D
 
-@export var speed: float = 2000.0
+@export var speed: float = 600.0
 @export var damage: float = 25.0
 
 # This controls how long the bullet stays alive before deleting itself
-# Higher number means the bullet travels farther
 @export var lifetime: float = 2.0
 
 # I'm separating direction from speed because the direction is for where the projectile moves
-# where the speed is for how fast the projectile moves
 var direction := Vector2.ZERO
 
 
 func _ready() -> void:
+	# Connecting Area2D collision signal so the projectile reacts when it touches something
 	body_entered.connect(_on_body_entered)
+	
+	# Connecting the screen exit signal so the projectile gets deleted when it leaves screen
 	$VisibleOnScreenNotifier2D.screen_exited.connect(_on_screen_exited)
 	
 	# Deletes bullet after some time so it does not exist forever
@@ -25,20 +26,18 @@ func _ready() -> void:
 	queue_free()
 
 
-func _process(delta: float) -> void:
-	pass
-
-# Testing to see if this will fix my bullet issue
 func _physics_process(delta: float) -> void:
+	# Moving the projectile every frame
 	global_position += direction * speed * delta
+
 
 func _on_body_entered(body: Node2D) -> void:
 	print("Bullet hit: ", body.name)
-
+	
 	# If the bullet hits the player, ignore it
 	if body.is_in_group("Player"):
 		return
-
+	
 	# Checking to see if the object hit the enemy because only the zombies should take hit damage
 	if body.is_in_group("Enemy"):
 		
@@ -47,6 +46,8 @@ func _on_body_entered(body: Node2D) -> void:
 		# Applying damage to the enemy
 		if body.has_method("take_damage"):
 			body.take_damage(damage)
+		else:
+			print("Enemy does not have take_damage function")
 		
 		# Deleting the projectile after it has hit the enemy
 		queue_free()

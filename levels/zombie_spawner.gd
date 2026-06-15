@@ -10,6 +10,7 @@ extends Node2D
 # How far away from the player zombies should spawn
 @export var spawn_distance: float = 500.0
 
+# Maximum zombies allowed at once so the game does not get too chaotic
 @export var max_zombies: int = 8
 
 # Reference to the player so zombies can spawn around them
@@ -34,8 +35,10 @@ func _on_spawn_timer_timeout() -> void:
 
 
 func spawn_zombie() -> void:
+	# Check how many zombies currently exist
 	var current_zombies = get_tree().get_nodes_in_group("Enemy")
-
+	
+	# If there are already too many zombies, stop and don't spawn more
 	if current_zombies.size() >= max_zombies:
 		return
 	

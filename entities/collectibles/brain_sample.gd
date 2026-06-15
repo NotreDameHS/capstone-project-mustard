@@ -1,11 +1,17 @@
-class_name BrainSample extends Area2D
+# This script controls the brain sample collectible
+# Goal: when the player touches it, the player collects it and the brain counter goes up
 
-@export var sample_amount: int = 1 # Should always be a whole number – I don't want to drop half a brain sample
+class_name BrainSample
+extends Area2D
 
-# Called when the node enters the scene tree for the first time.
+# How many brain samples this pickup gives
+@export var sample_amount: int = 1
+
+
 func _ready() -> void:
-	# This – in theory – will pick up brain samples when player come in contact with it (hopefully automatically – if I didn't screw up) 
-	body_entered.connect(_on_body_entered) # When something comes in contact witj Area2D, run the on body function
+	# Connecting Area2D body entered signal so that this will pick up brain samples when player touches it
+	body_entered.connect(_on_body_entered)
+
 
 func _on_body_entered(body: Node2D) -> void:
 	# Only want the item to be collected if it has come in contact with the player
@@ -20,11 +26,7 @@ func _on_body_entered(body: Node2D) -> void:
 		# Deleting the brain sample from the scene after the player collects it
 		queue_free()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
-# Delete the brain after the time given to pick it up
-# I don't want to overcrowd with pickups, plus it gives some pressure on the player to pick it faster >:)
 func _on_despawn_timer_timeout() -> void:
+	# Deletes the brain after a certain amount of time
 	queue_free()

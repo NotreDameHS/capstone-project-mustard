@@ -40,6 +40,7 @@ value = 100.0
 show_percentage = false
 
 [node name="AttackRange" type="Area2D" parent="." unique_id=1136362146]
+collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange" unique_id=857601097]
 shape = SubResource("CircleShape2D_815kx")

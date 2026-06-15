@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://eyjd3is0yw77"]
+
+[ext_resource type="Script" uid="uid://g46wc4hsyd6r" path="res://levels/zombie_spawner.gd" id="1_nttm3"]
+[ext_resource type="PackedScene" uid="uid://cgtq15h4sehmr" path="res://entities/enemy/walker_zombie.tscn" id="2_puf6h"]
+[ext_resource type="PackedScene" uid="uid://c5jautaki2dmh" path="res://entities/enemy/runner_zombie.tscn" id="3_q3yjr"]
+[ext_resource type="PackedScene" uid="uid://dsq71v755gn2x" path="res://entities/enemy/tank_zombie.tscn" id="4_aqt1f"]
+
+[node name="ZombieSpawner" type="Node2D" unique_id=87860922]
+script = ExtResource("1_nttm3")
+zombie_scenes = Array[PackedScene]([ExtResource("2_puf6h"), ExtResource("3_q3yjr"), ExtResource("4_aqt1f")])
+
+[node name="SpawnerTimer" type="Timer" parent="." unique_id=1320221921]
+wait_time = 4.0

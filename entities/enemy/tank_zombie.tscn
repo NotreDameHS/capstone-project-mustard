@@ -4,8 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://biduh4o4wrspi" path="res://world/kenney_tiny-dungeon/Tiles/tile_0109.png" id="2_23d6u"]
 
 [node name="TankZombie" unique_id=1560193310 instance=ExtResource("1_acjdw")]
-speed = 200.0
+speed = 40.0
+max_health = 300.0
 brain_drop_amount = 5
+attack_damage = 20.0
+attack_cooldown = 1.5
 
 [node name="Sprite2D" parent="." index="0" unique_id=1683188954]
 scale = Vector2(3.0625, 3.15625)
