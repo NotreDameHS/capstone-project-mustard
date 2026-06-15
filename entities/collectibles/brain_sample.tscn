@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://tol63hc0fovj" path="res://entities/collectibles/stylized-brain-icon-in-pixel-art-style-png.webp" id="2_phoru"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eot8a"]
+radius = 16.0
 
 [node name="BrainSample" type="Area2D" unique_id=2069945248]
 collision_layer = 8

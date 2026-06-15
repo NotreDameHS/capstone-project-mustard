@@ -13,7 +13,7 @@ texture_filter = 1
 scale = Vector2(0.09613093, 0.10849999)
 texture = ExtResource("2_e8ab6")
 
-[node name="Firepoint" type="Marker2D" parent="." unique_id=1126296710]
+[node name="FirePoint" type="Marker2D" parent="." unique_id=1126296710]
 
 [node name="CooldownTimer" type="Timer" parent="." unique_id=853607207]
 wait_time = 0.4

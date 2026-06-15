@@ -4,7 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://o1mx63uv880n" path="res://entities/player/tile_0084.png" id="2_abrql"]
 [ext_resource type="PackedScene" uid="uid://bwbsqxbbecsga" path="res://entities/projectiles/weapon.tscn" id="3_sglur"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_abrql"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_bls4j"]
+radius = 37.054016
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_symyc"]
 bg_color = Color(0, 1, 1, 1)
@@ -14,6 +15,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sglur"]
+radius = 44.011364
 
 [node name="Player" type="CharacterBody2D" unique_id=1672458893 groups=["Player"]]
 collision_mask = 32
@@ -27,8 +29,7 @@ texture = ExtResource("2_abrql")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=36360991]
-visible = false
-shape = SubResource("CircleShape2D_abrql")
+shape = SubResource("CircleShape2D_bls4j")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=923053166]
 zoom = Vector2(2, 2)
@@ -49,7 +50,6 @@ value = 100.0
 show_percentage = false
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=1145988020]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1939061555]
 shape = SubResource("CircleShape2D_sglur")

@@ -14,7 +14,7 @@ extends Node2D
 @export var min_spawn_distance_from_player: float = 250.0
 
 # This points to the SpawnZones node in the main scene
-@export var spawn_zones_path: NodePath
+@export var spawn_zones_path: NodePath = "SpawnZones"
 
 # Reference to the player
 var player: Node2D = null

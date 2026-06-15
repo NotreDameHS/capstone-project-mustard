@@ -44,10 +44,10 @@ func _ready() -> void:
 	health_bar.value = health
 	
 	# Finding UI labels from the main scene
-	brain_label = get_tree().current_scene.get_node("CanvasLayer/BrainLabel")
-	health_label = get_tree().current_scene.get_node("CanvasLayer/HealthLabel")
-	game_over_label = get_tree().current_scene.get_node("CanvasLayer/GameOverLabel")
-	win_label = get_tree().current_scene.get_node("CanvasLayer/WinLabel")
+	brain_label = get_tree().current_scene.get_node_or_null("CanvasLayer/BrainLabel")
+	health_label = get_tree().current_scene.get_node_or_null("CanvasLayer/HealthLabel")
+	game_over_label = get_tree().current_scene.get_node_or_null("CanvasLayer/GameOverLabel")
+	win_label = get_tree().current_scene.get_node_or_null("CanvasLayer/WinLabel")
 	
 	# Make sure game over and win text are hidden at the start
 	if game_over_label != null:

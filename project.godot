@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="ZOMBAGEDDON"
+run/main_scene="uid://db2er2yyxdk52"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
