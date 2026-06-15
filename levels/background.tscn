@@ -3,7 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://ba081wnyubbh5" path="res://levels/background_image.png" id="1_nltu7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nltu7"]
-size = Vector2(1497, 425)
+size = Vector2(1496, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_10joj"]
+size = Vector2(1497, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7suw"]
+size = Vector2(53, 828)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3h817"]
+size = Vector2(36, 828)
 
 [node name="Background" type="Sprite2D" unique_id=881624115]
 light_mask = 2
@@ -13,5 +22,17 @@ texture = ExtResource("1_nltu7")
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=606494379]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=169128504]
-position = Vector2(1.5, -202.5)
+position = Vector2(0, -439)
 shape = SubResource("RectangleShape2D_nltu7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=2097736432]
+position = Vector2(-0.5, 436)
+shape = SubResource("RectangleShape2D_10joj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1205426566]
+position = Vector2(-774.5, 0)
+shape = SubResource("RectangleShape2D_i7suw")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1923302617]
+position = Vector2(766, 0)
+shape = SubResource("RectangleShape2D_3h817")

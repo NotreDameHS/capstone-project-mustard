@@ -2,10 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://cjl6mllgxdll7" path="res://levels/background.tscn" id="1_qy63d"]
 [ext_resource type="PackedScene" uid="uid://efrqvqnejejr" path="res://entities/player/player.tscn" id="1_wdj6m"]
-[ext_resource type="Script" uid="uid://g46wc4hsyd6r" path="res://levels/zombie_spawner.gd" id="2_l8qe7"]
-[ext_resource type="PackedScene" uid="uid://cgtq15h4sehmr" path="res://entities/enemy/walker_zombie.tscn" id="3_ifaiv"]
-[ext_resource type="PackedScene" uid="uid://c5jautaki2dmh" path="res://entities/enemy/runner_zombie.tscn" id="4_5k4jt"]
-[ext_resource type="PackedScene" uid="uid://dsq71v755gn2x" path="res://entities/enemy/tank_zombie.tscn" id="5_qy63d"]
+[ext_resource type="PackedScene" uid="uid://c807epe6lsdkh" path="res://levels/walls.tscn" id="3_5k4jt"]
+[ext_resource type="PackedScene" uid="uid://eyjd3is0yw77" path="res://levels/zombie_spawner.tscn" id="3_m1504"]
+[ext_resource type="PackedScene" uid="uid://xr6t1yq7bdmn" path="res://ui/canvas_layer.tscn" id="6_qy63d"]
 [ext_resource type="Texture2D" uid="uid://ba081wnyubbh5" path="res://levels/background_image.png" id="7_qy63d"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5k4jt"]
@@ -21,48 +20,14 @@ texture_filter = 1
 position = Vector2(748, 414)
 texture = ExtResource("7_qy63d")
 
+[node name="Walls" parent="." unique_id=1853473017 instance=ExtResource("3_5k4jt")]
+
+[node name="ZombieSpawner" parent="." unique_id=87860922 instance=ExtResource("3_m1504")]
+spawn_zones_path = NodePath("../ZombieSpawner/SpawnZones")
+
 [node name="Player" parent="." unique_id=1672458893 instance=ExtResource("1_wdj6m")]
 
-[node name="ZombieSpawner" type="Node2D" parent="." unique_id=1087347539]
-script = ExtResource("2_l8qe7")
-zombie_scenes = Array[PackedScene]([ExtResource("3_ifaiv"), ExtResource("4_5k4jt"), ExtResource("5_qy63d")])
-
-[node name="SpawnTimer" type="Timer" parent="ZombieSpawner" unique_id=1610889789]
-wait_time = 5.0
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=509614805]
-
-[node name="BrainLabel" type="Label" parent="CanvasLayer" unique_id=995737792]
-offset_left = -723.0
-offset_top = -403.0
-offset_right = -623.0
-offset_bottom = -380.0
-text = "Brains: 0 / 50"
-
-[node name="HealthLabel" type="Label" parent="CanvasLayer" unique_id=306791014]
-offset_left = -584.0
-offset_top = -405.0
-offset_right = -462.0
-offset_bottom = -382.0
-text = "Health: 100/100"
-
-[node name="GameOverLabel" type="Label" parent="CanvasLayer" unique_id=513820810]
-visible = false
-offset_left = -117.0
-offset_top = -27.0
-offset_right = 107.0
-offset_bottom = 27.0
-theme_override_font_sizes/font_size = 40
-text = "GAME OVER"
-
-[node name="WinLabel" type="Label" parent="CanvasLayer" unique_id=1573794605]
-visible = false
-offset_left = -106.0
-offset_top = -27.0
-offset_right = 90.0
-offset_bottom = 28.0
-theme_override_font_sizes/font_size = 40
-text = "YOU WON"
+[node name="CanvasLayer" parent="." unique_id=222154716 instance=ExtResource("6_qy63d")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=40222033]
 
@@ -72,5 +37,3 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=31544944]
 visible = false
 shape = SubResource("WorldBoundaryShape2D_5k4jt")
-
-[connection signal="timeout" from="ZombieSpawner/SpawnTimer" to="ZombieSpawner" method="_on_spawn_timer_timeout"]

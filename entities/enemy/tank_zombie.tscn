@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://biduh4o4wrspi" path="res://world/kenney_tiny-dungeon/Tiles/tile_0109.png" id="2_23d6u"]
 
 [node name="TankZombie" unique_id=1560193310 instance=ExtResource("1_acjdw")]
+collision_mask = 32
 speed = 40.0
 max_health = 300.0
 brain_drop_amount = 5

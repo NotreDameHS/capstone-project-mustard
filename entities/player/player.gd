@@ -5,7 +5,7 @@ class_name Player
 extends CharacterBody2D
 
 # Having it as an export will help me have an easier time tweaking this later on – especially because I plan on having a speed upgrade
-@export var max_speed: float = 5.0
+@export var max_speed: float = 250.0
 
 # Stores the player's maximum health
 @export var max_health: float = 100.0
@@ -76,10 +76,7 @@ func _physics_process(delta: float) -> void:
 		direction = direction.normalized()
 	
 	velocity = direction * max_speed
-	
-	# Moving player
-	position.x += velocity.x
-	position.y += velocity.y
+	move_and_slide()
 	
 	# Flipping sprite and weapon depending on movement direction
 	if velocity.x > 0:

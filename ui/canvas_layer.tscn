@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://xr6t1yq7bdmn"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=222154716]
+
+[node name="BrainLabel" type="Label" parent="." unique_id=1370414182]
+offset_left = -723.0
+offset_top = -403.0
+offset_right = -623.0
+offset_bottom = -380.0
+text = "Brains: 0 / 50"
+metadata/_edit_use_anchors_ = true
+
+[node name="HealthLabel" type="Label" parent="." unique_id=1156834997]
+offset_left = -584.0
+offset_top = -405.0
+offset_right = -462.0
+offset_bottom = -382.0
+text = "Health: 100/100"
+
+[node name="GameOverLabel" type="Label" parent="." unique_id=1829540168]
+visible = false
+offset_left = -117.0
+offset_top = -27.0
+offset_right = 113.0
+offset_bottom = 28.0
+theme_override_font_sizes/font_size = 40
+text = "GAME OVER"
+
+[node name="WinLabel" type="Label" parent="." unique_id=707697629]
+visible = false
+offset_left = -106.0
+offset_top = -27.0
+offset_right = 90.0
+offset_bottom = 28.0
+theme_override_font_sizes/font_size = 40
+text = "YOU WON"

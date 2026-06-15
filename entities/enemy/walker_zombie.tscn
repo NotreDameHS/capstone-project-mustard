@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bxxno2br2peai" path="res://entities/enemy/base_enemy.tscn" id="1_nlsvd"]
 
 [node name="WalkerZombie" unique_id=1560193310 instance=ExtResource("1_nlsvd")]
+collision_mask = 32
 
 [node name="Sprite2D" parent="." index="0" unique_id=1683188954]
 position = Vector2(7.6293945e-06, -3.8146973e-06)

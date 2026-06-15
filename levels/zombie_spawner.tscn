@@ -5,9 +5,57 @@
 [ext_resource type="PackedScene" uid="uid://c5jautaki2dmh" path="res://entities/enemy/runner_zombie.tscn" id="3_q3yjr"]
 [ext_resource type="PackedScene" uid="uid://dsq71v755gn2x" path="res://entities/enemy/tank_zombie.tscn" id="4_aqt1f"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nttm3"]
+size = Vector2(65.5, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_puf6h"]
+size = Vector2(60.5, 64.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3yjr"]
+size = Vector2(68, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqt1f"]
+size = Vector2(74.5, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ia7qr"]
+size = Vector2(62.5, 55.5)
+
 [node name="ZombieSpawner" type="Node2D" unique_id=87860922]
 script = ExtResource("1_nttm3")
 zombie_scenes = Array[PackedScene]([ExtResource("2_puf6h"), ExtResource("3_q3yjr"), ExtResource("4_aqt1f")])
+spawn_zones_path = NodePath("SpawnZones")
 
 [node name="SpawnerTimer" type="Timer" parent="." unique_id=1320221921]
 wait_time = 4.0
+
+[node name="SpawnZones" type="Node2D" parent="." unique_id=1110428842]
+
+[node name="SpawnZone1" type="Area2D" parent="SpawnZones" unique_id=430466272]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnZones/SpawnZone1" unique_id=1967042410]
+position = Vector2(-301, -71)
+shape = SubResource("RectangleShape2D_nttm3")
+
+[node name="SpawnZone2" type="Area2D" parent="SpawnZones" unique_id=247802982]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnZones/SpawnZone2" unique_id=1188131040]
+position = Vector2(-690.25, 152.25)
+shape = SubResource("RectangleShape2D_puf6h")
+
+[node name="SpawnZone3" type="Area2D" parent="SpawnZones" unique_id=522971072]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnZones/SpawnZone3" unique_id=936800032]
+position = Vector2(-289, 358)
+shape = SubResource("RectangleShape2D_q3yjr")
+
+[node name="SpawnZone4" type="Area2D" parent="SpawnZones" unique_id=338808632]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnZones/SpawnZone4" unique_id=1697029163]
+position = Vector2(679.25, 70)
+shape = SubResource("RectangleShape2D_aqt1f")
+
+[node name="SpawnZone5" type="Area2D" parent="SpawnZones" unique_id=482998359]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnZones/SpawnZone5" unique_id=343244517]
+position = Vector2(370.75, 166.75)
+shape = SubResource("RectangleShape2D_ia7qr")
