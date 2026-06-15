@@ -3,34 +3,50 @@
 [node name="CanvasLayer" type="CanvasLayer" unique_id=222154716]
 
 [node name="BrainLabel" type="Label" parent="." unique_id=1370414182]
-offset_left = -723.0
-offset_top = -403.0
-offset_right = -623.0
-offset_bottom = -380.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 207.0
+offset_bottom = 62.0
+theme_override_font_sizes/font_size = 40
 text = "Brains: 0 / 50"
 metadata/_edit_use_anchors_ = true
 
 [node name="HealthLabel" type="Label" parent="." unique_id=1156834997]
-offset_left = -584.0
-offset_top = -405.0
-offset_right = -462.0
-offset_bottom = -382.0
+offset_left = 20.0
+offset_top = 65.0
+offset_right = 323.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 40
 text = "Health: 100/100"
 
 [node name="GameOverLabel" type="Label" parent="." unique_id=1829540168]
 visible = false
-offset_left = -117.0
-offset_top = -27.0
-offset_right = 113.0
-offset_bottom = 28.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -27.5
+offset_right = 115.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "GAME OVER"
 
 [node name="WinLabel" type="Label" parent="." unique_id=707697629]
 visible = false
-offset_left = -106.0
-offset_top = -27.0
-offset_right = 90.0
-offset_bottom = 28.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -27.5
+offset_right = 98.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 40
 text = "YOU WON"

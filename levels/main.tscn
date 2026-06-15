@@ -35,5 +35,4 @@ spawn_zones_path = NodePath("../ZombieSpawner/SpawnZones")
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=31544944]
-visible = false
 shape = SubResource("WorldBoundaryShape2D_5k4jt")

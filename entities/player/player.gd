@@ -33,7 +33,7 @@ var win_label: Label = null
 
 
 func _ready() -> void:
-	print("READY")
+	print("PLAYER READY IS RUNNING")
 	
 	# Starting health should always begin at max health
 	health = max_health
@@ -48,6 +48,31 @@ func _ready() -> void:
 	health_label = get_tree().current_scene.get_node_or_null("CanvasLayer/HealthLabel")
 	game_over_label = get_tree().current_scene.get_node_or_null("CanvasLayer/GameOverLabel")
 	win_label = get_tree().current_scene.get_node_or_null("CanvasLayer/WinLabel")
+	
+	
+	var canvas = get_tree().current_scene.get_node_or_null("CanvasLayer")
+	print("CanvasLayer is: ", canvas)
+
+	brain_label = get_tree().current_scene.get_node_or_null("CanvasLayer/BrainLabel")
+	health_label = get_tree().current_scene.get_node_or_null("CanvasLayer/HealthLabel")
+
+	print("BrainLabel is: ", brain_label)
+	print("HealthLabel is: ", health_label)
+	
+	
+	if brain_label != null:
+		brain_label.visible = true
+		brain_label.text = "Brains: 0 / 50"
+
+	if health_label != null:
+		health_label.visible = true
+		health_label.text = "Health: 100 / 100"
+
+	if game_over_label == null:
+		print("GameOverLabel not found")
+
+	if win_label == null:
+		print("WinLabel not found")
 	
 	# Make sure game over and win text are hidden at the start
 	if game_over_label != null:
